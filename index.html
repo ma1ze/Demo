@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web_demo</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <script>
+        var x = 0,
+            y = 0,
+            z = 0;
+    </script>
+    <script type="text/javascript" src="js/three.js"></script>
+    <script type="text/javascript" src="js/stats.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/Projector.js"></script>
+    <script src="js/CanvasRenderer.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <style>
+        .one,
+        .two {
+            width: 50%;
+            float: left;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body onload="openSocket()">
+    <div id="status">
+        Connection failed. Somebody may be using the socket.
+    </div>
+    <p></p>
+    <div>选项设置</div>
+    <p></p>
+    <div>
+        <input id="btnMode" type="button" value="模式选择" onclick="connect()" /> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input id="btnMeaning" type="button" value="意义赋予" onclick="connect()" />&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input id="btnTracking" type="button" value="轨迹录制" onclick="connect()" />&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input id="PosShowing" type="button" value="当前位置" />&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input id="btnSending" type="button" value="发送" onclick="send()" />&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input id="sendText" type="text" placeholder="发送指令" value="test" />
+    </div>
+    <p></p>
+    <div>
+        <input id="btnCamera" type="button" value="摄像头编号" onclick="connect()" /> &ensp;&ensp;&ensp;&ensp;
+        <input id="btnSimulation" type="button" value="仿真交互" onclick="connect()" />&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <input id="btnArea" type="button" value="区域划分" onclick="connect()" />
+    </div>
+    <p></p>
+    <p></p>
+    <div class="one">
+        <canvas id="msg" width="640" height="380" />&ensp;&ensp;&ensp;&ensp;
+
+        <p></p>
+    </div>
+    <div id="container" class="two"></div>
+    <script type="text/javascript" src="js/trackPaint.js">
+    </script>
+
+</body>
+
+</html>
