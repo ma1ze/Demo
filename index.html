@@ -101,17 +101,17 @@
                 <div class="row">
                     <div class="col-md-2">
                         <button class="btn btn-default" style="display:block;margin:0 auto" onclick="cameraClick()">
-                            摄像头标定
+                            开始示踪
                         </button>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-default" style="display:block;margin:0 auto">
-                            意义赋予
+                        <button class="btn btn-default" style="display:block;margin:0 auto" onclick="posShow()">
+                            位置显示
                         </button>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-default" style="display:block;margin:0 auto">
-                            当前位置
+                        <button class="btn btn-default" style="display:block;margin:0 auto" onclick="stop()">
+                            关闭显示
                         </button>
                     </div>
                     <div class="col-md-2">
@@ -121,7 +121,7 @@
                     </div>
                     <div class="col-md-2">
                         <button class="btn btn-default" style="display:block;margin:0 auto">
-                            区域划分
+                            意义赋予
                         </button>
                     </div>
                     <div class="col-md-2">
@@ -135,8 +135,8 @@
 
 
                 <div class="row">
-                    <div class="alert alert-success">
-                        <strong>Something about the functions above</strong>
+                    <div class="alert alert-success" id="PositionInfo">
+                        <strong>Position information here</strong>
                     </div>
                     </br>
                 </div>

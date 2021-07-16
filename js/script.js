@@ -10,16 +10,17 @@ openSocket = () => {
         });
 
         socket.addEventListener('message', (e) => {
-            let ctx = msg.getContext("2d");
-            let image = new Image();
-
+            // let ctx = msg.getContext("2d");
+            // let image = new Image();
+            // document.getElementById("PositionInfo").innerHTML = "start"
             if (typeof(e.data) == "string") {
-                num = num + 1
-                document.getElementById("PosShowing").value = e.data
-                var strList = e.data.split("|");
-                x = parseFloat(strList[0] * 100)
-                y = parseFloat(strList[1] * 100)
-                z = parseFloat(strList[2] * 100)
+                // num = num + 1
+
+                document.getElementById("PositionInfo").innerHTML = e.data
+                    // var strList = e.data.split("|");
+                    // x = parseFloat(strList[0] * 100)
+                    // y = parseFloat(strList[1] * 100)
+                    // z = parseFloat(strList[2] * 100)
 
                 // paint(x, y, z)
 
@@ -50,5 +51,15 @@ function send() {
 
 function cameraClick() {
     var str = "camera|on"
+    socket.send(str);
+}
+
+function posShow() {
+    var str = "posShow|on"
+    socket.send(str);
+}
+
+function stop() {
+    var str = "stop|on"
     socket.send(str);
 }

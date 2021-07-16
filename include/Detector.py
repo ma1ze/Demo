@@ -10,7 +10,7 @@ sys.path.append(current_dir)
 sys.path.append(root_dir)
 
 # default_config_dir = os.path.join(root_dir, "config", "detector.yaml")
-default_config_dir ="F:/python/webDemo/detector.yaml"
+default_config_dir ="F:/python/Demo/detector.yaml"
 import cv2
 import cv2.aruco as aruco
 from tag import Tag
@@ -179,8 +179,8 @@ class Detector(object):
 
 
 
-        cv2.namedWindow("image")
-        cv2.setMouseCallback("image", on_EVENT_LBUTTONDOWN)
+        # cv2.namedWindow("image")
+        # cv2.setMouseCallback("image", on_EVENT_LBUTTONDOWN)
         if self.debug:
             image = deepcopy(self._currentImage)
             if ids is not None and len(ids) > 0:
@@ -221,9 +221,9 @@ if __name__ == "__main__":
         for e in tag_list:
             id_count[e._id] += 1
 
-        for tag in tag_list:
-
-
-            print("ID: {}, x: {},y: {},z: {},row: {},pitch: {},yaw: {},time: {}".format(tag._id, tag.world_position[0], tag.world_position[1], tag.world_position[2],tag.Euler_angle[0],tag.Euler_angle[1],tag.Euler_angle[2],tag.time))
-
-        print("Next")
+    #     for tag in tag_list:
+    #
+    #
+    #         print("ID: {}, x: {},y: {},z: {},row: {},pitch: {},yaw: {},time: {}".format(tag._id, tag.world_position[0], tag.world_position[1], tag.world_position[2],tag.Euler_angle[0],tag.Euler_angle[1],tag.Euler_angle[2],tag.time))
+    #
+    #     print("Next")
