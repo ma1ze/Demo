@@ -1,0 +1,365 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1">
+    <title>BionicDL@2021Summer</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <script src="js/respond-1.1.0.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/html5element.js"></script>
+    <script>
+        var x = 0,
+            y = 0,
+            z = 0;
+    </script>
+    <script type="text/javascript" src="js/three.js"></script>
+    <script type="text/javascript" src="js/stats.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/Projector.js"></script>
+    <script src="js/CanvasRenderer.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <style>
+        .one,
+        .two {
+            width: 50%;
+            float: left;
+            box-sizing: border-box;
+        }
+    </style>
+
+    <![endif]-->
+
+</head>
+
+<body onload="openSocket()">
+
+<!--Header_section-->
+<header id="header_wrapper">
+    <div class="container">
+        <div class="header_box">
+            <div class="logo"><a href="#"><img src="img/MEE&BionicLogo.PNG" alt="logo"></a></div>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#main-nav"><span class="sr-only">Toggle navigation</span> <span
+                            class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="main-nav" class="collapse navbar-collapse navStyle">
+                    <ul class="nav navbar-nav" id="mainNav">
+                        <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
+                        <li><a href="#aboutUs" class="scroll-link">Aruco Tracking</a></li>
+                        <li><a href="#Simulation" class="scroll-link">Simulation</a></li>
+                        <li><a href="#Portfolio" class="scroll-link">Real Rbot</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<!--Header_section-->
+
+<!--Hero_Section-->
+<section id="hero_section" class="top_cont_outer">
+    <div class="container">
+        <div class="hero_section">
+            <div class="row">
+                <div class="col-lg-12 col-sm-4">
+                    <div class="top_left_cont zoomIn wow animated">
+                        <h2> a <strong>cost-effective</strong> method using simple vision and
+                            markers for digitizing the physical into structured data that can be conveniently
+                            processed and intuitively understood by human operators, aiming for interactive and
+                            intelligent manipulation of robotic systems.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Hero_Section-->
+
+<!--Aruco Tracking-->
+<section id="aboutUs">
+    <div class="inner_wrapper">
+        <div class="container">
+            <h2>Aruco Tracking</h2>
+            <div class="inner_section">
+
+                <div class="row">
+                    <div class="alert alert-warning" id="status">
+                        <strong>Connection failed. Somebody may be using the socket.</strong>
+                    </div>
+                    </br>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button class="btn btn-default" style="display:block;margin:0 auto" onclick="cameraClick()">
+                            摄像头标定
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            意义赋予
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            当前位置
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            轨迹录制
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            区域划分
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            区域划分
+                        </button>
+                        </br>
+                        </br>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="alert alert-success">
+                        <strong>Something about the functions above</strong>
+                    </div>
+                    </br>
+                </div>
+
+                <div class="col-lg-4">
+                    <img src="img/moveSUSTech.png" class="img-rounded delay-03s animated wow zoomIn"
+                         alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="img/plantsVSzombies.jpg" class="img-rounded delay-03s animated wow zoomIn"
+                         alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="img/carRacing.jpg" class="img-rounded delay-03s animated wow zoomIn"
+                         alt="">
+                    </br>
+                    </br>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            Game 1: Moving a SUSTech
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-primary" style="display:block;margin:0 auto">
+                            Game 2: Plants VS Zombies
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-danger" style="display:block;margin:0 auto">
+                            Game 3: Car Racing
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--/Aruco Tracking-->
+
+
+<!--Simulation-->
+<section id="Simulation">
+    <div class="container">
+        <h2>Simulation</h2>
+        <div class="service_wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>
+                            Operation steps
+                        </h3>
+                        <div class="panel-body">
+                            <div class="alert alert-success">
+                                <strong>Choose your robot</strong>
+                            </div>
+                            <div class="alert alert-info">
+                                <strong>Enter simulation environment</strong>
+                            </div>
+                            <div class="alert alert-warning">
+                                <strong>Play with aruco cube</strong>
+                            </div>
+                            <div class="alert alert-danger">
+                                <strong>Observe the motion of robot</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>
+                                    Choose robot here
+                                </h3>
+                                </br>
+                                <div class="alert alert-info">
+                                    <strong>Here are three robot available in Pybullet simulation environment:
+                                        Franka Panda, Yaskawa
+                                        Motomini, UR 10e.<br/>
+                                        For the robots mentioned above we have real robot in our BionicDL
+                                        lab.<br/>
+                                        Choose the robot that you want to play with by clicking one of the
+                                        buttons below.<br/></strong>
+                                </div>
+                                <div class="panel-body">
+                                    <div class=" col-lg-4 col-md-2 col-sm-2 col-xs-12">
+                                        <img src="img/franka.PNG" class="img-circle delay-03s animated wow zoomIn"
+                                             alt="">
+                                    </div>
+                                    <div class=" col-lg-4 col-md-2 col-sm-2 col-xs-12">
+                                        <img src="img/Motomini.jpg" class="img-circle delay-03s animated wow zoomIn"
+                                             alt="">
+                                    </div>
+                                    <div class=" col-lg-4 col-md-2 col-sm-2 col-xs-12">
+                                        <img src="img/UR10e.PNG" class="img-circle delay-03s animated wow zoomIn"
+                                             alt="">
+                                        </br>
+                                        </br>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <button class="btn btn-default" style="display:block;margin:0 auto">
+                                                Franka Panda
+                                            </button>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button class="btn btn-primary" style="display:block;margin:0 auto">
+                                                Yaskawa Motomini
+                                            </button>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button class="btn btn-danger" style="display:block;margin:0 auto">
+                                                UR 10e
+                                            </button>
+                                            </br>
+                                            </br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn-lg" data-toggle="modal"
+                                style="display:block;margin:0 auto"
+                                data-target="#myModal">
+                            Enter Simulation Environment
+                        </button>
+                        </br>
+                        </br>
+                        </br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>
+                            The position and posture of the end effector of you robot
+                        </h3>
+                        <div class="panel-body">
+                            <div class="alert alert-success">
+                                6D info of robot here
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /. PAGE INNER  -->
+            </div>
+            <!-- /. PAGE WRAPPER  -->
+        </div>
+    </div>
+    </div>
+</section>
+<!--Simulation-->
+
+
+<!--Real Robot-->
+<section id="Portfolio">
+    <div class="inner_wrapper">
+        <div class="container">
+            <h2>Real Robot</h2>
+            <div class="inner_section">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="img/WorkSpace.PNG" class="img-responsive delay-03s animated wow zoomIn" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            仅追踪位置
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            追踪位置和姿态
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            关闭夹爪
+                        </button>
+                    </div>
+                    </br></br></br>
+                    <div class="col-md-4">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            打开夹爪
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            急停
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-default" style="display:block;margin:0 auto">
+                            记录轨迹信息
+                        </button>
+                    </div>
+                    </br></br></br>
+                </div>
+
+                <div class="row">
+                    <div class="alert alert-success">
+                        <strong>Something about the functions above</strong>
+                    </div>
+                    </br>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/Real Robot -->
+
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
+<script type="text/javascript" src="js/jquery.nav.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/wow.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+</html>
