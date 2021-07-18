@@ -230,6 +230,9 @@ class returnCrossDomain(Thread):
         #此处是图片处理阶段
 
         return pic
+# def fun1():
+#     while Tr
+
 
 def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

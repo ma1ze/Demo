@@ -1,7 +1,7 @@
 var num = 0;
 openSocket = () => {
 
-        socket = new WebSocket("ws://127.0.0.1:9997/");
+        socket = new WebSocket("ws://127.0.0.1:9996/");
         let msg = document.getElementById("msg");
 
 
@@ -61,5 +61,20 @@ function posShow() {
 
 function stop() {
     var str = "stop|on"
+    socket.send(str);
+}
+
+function openGame(){
+    // window.open('https://www.crazygames.com/game/super-bike-the-champion','_blank');
+}
+
+function bikeGame(){
+    window.open('https://www.crazygames.com/game/super-bike-the-champion','_blank');
+    var str = "game|on"
+    socket.send(str);
+}
+function shootGame(){
+    window.open('https://www.crazygames.com/game/fresdoka','_blank');
+    var str = "game|on"
     socket.send(str);
 }

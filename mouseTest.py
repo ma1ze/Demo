@@ -13,6 +13,8 @@ import time
 import math
 import matplotlib.pyplot as plt
 from PIL import Image
+import keyboard
+
 
 def trasform(pt1 ,pt2,x,y):
     xlen = abs(pt1[0]-pt2[0])
@@ -207,13 +209,31 @@ def FakeKeyboard(clickDuration = 0.5):
         else:
                 pass
 
+def keyboardMouse():
+
+    # print(0)
+    # keyboard.wait('a')
+    # # 在按下a之前后面的语句都不会执行，下面同理
+    # print(1)
+    # keyboard.wait('b')
+    # print(2)
+    # keyboard.wait('c')
+    # print(3)
+    # keyboard.wait()
+    mouse = mouseControl()
+    while True:
+        keyboard.wait('q')
+        mouse.leftMouseClick()
+        print(3)
+
+
 def image_process():
     im=Image.open("F:/python/webDemo/myplot.png")
     out= im.transpose(Image.FLIP_LEFT_RIGHT)
     out.save("F:/python/webDemo/myplot2.png")
 
 if __name__ == "__main__":
-    FakeKeyboard()
+    # FakeKeyboard()
     # img = image_process()
-
+    keyboardMouse()
 
