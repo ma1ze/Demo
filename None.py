@@ -7,6 +7,7 @@ import time
 from enum import Enum
 from Detector import Detector
 import numpy as np
+from mouseControl import *
 
 class Mode(Enum):
     start = 0
@@ -74,11 +75,28 @@ def Controller():
                     mode = Mode.start
                     break
 
-        # elif mode == Mode.gameMode:
+        elif mode == Mode.gameMode:
+            print("Game working")
+            id_count = np.zeros(50)
+            while True:
+                tag_list = detector.get_tag_list()
+                for e in tag_list:
+                    id_count[e._id] += 1
+                #
+                # for tag in tag_list:
+                #
+                #     if tag._id == 4:
+
+
+                if mode == Mode.stop:
+                    cv2.destroyAllWindows()
+                    mode = Mode.start
+                    break
         #
         #
         # elif mode == Mode.stop:
         #     print("Stopping......")
+
 
 
 

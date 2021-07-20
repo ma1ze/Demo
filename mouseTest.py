@@ -4,7 +4,7 @@ import tag
 import pyautogui
 import sys
 import numpy as np
-from  tag import Direction
+from tag import Direction
 import cv2
 import cv2.aruco as aruco
 import glob
@@ -52,7 +52,7 @@ def followmove():
             mouse.recordPosition()
 
 
-def FakeMouse(clickDuration = 0.5):
+def FakeMouse(clickDuration=0.5):
     detector = Detector(debug=True, Blur=True, Sharpen=True)
     id_count = np.zeros(50)
     mouse = mouseControl()
@@ -198,7 +198,6 @@ def FakeKeyboard(clickDuration = 0.5):
                     elif tag.direction == Direction.behind:
                         pyautogui.keyDown('s')
                         time.sleep(0.3)
-
                         pyautogui.keyUp('s')
                         print('s')
 
@@ -233,7 +232,7 @@ def image_process():
     out.save("F:/python/webDemo/myplot2.png")
 
 if __name__ == "__main__":
-    # FakeKeyboard()
+    FakeKeyboard()
     # img = image_process()
-    keyboardMouse()
+    # keyboardMouse()
 
